@@ -1,0 +1,89 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+Title
+========================================================
+
+This is an R Markdown document or RMD. Markdown is a simple formatting syntax for authoring web pages (click the **Help** toolbar button for more details on using R Markdown).
+```{r}
+?cars
+str(cars)
+plot(cars)
+```
+
+
+
+
+
+
+
+When you click the **Knit HTML** button a web page will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+```{r}
+head(cars)
+```
+```{r}
+summary(mtcars)
+#str(mtcars)
+```
+
+ efficient
+```{r}
+mtcars[mtcars$mpg >23,]
+mtcars[mtcars$mpg >30& mtcars$hp>100,]
+#6
+mtcars[c(mtcars$qsec>14,2)]
+#7
+lightcars <- mtcars[mtcars$lightCars<2000]
+
+nrow(lightcars)
+
+```
+```{r}
+mtcars$year <-1974
+summary(mtcars)
+```
+```{r}
+mtcars <- subset(mtcars, select = -year)
+```
+
+```{r}
+mtcars$year <- c(1973, 1974)
+mtcars <-subset(mtcars,select=-year)
+```
+```{r}
+mtcars$wt
+cond <- mtcars$wt < 3
+cond
+mtcars$weight_class <- ifelse(cond, 'light', 'average')
+mtcars$weight_class
+cond <- mtcars$wt > 3.5
+mtcars$weight_class <- ifelse(cond, 'heavy', mtcars$weight_class)
+mtcars$weight_class
+
+```
+```{r}
+rm(cond)
+
+```
+
+
+#practice
+
+```{r}
+mtcars$mpg
+speed<- mtcars$mpg<20
+mtcars$speedmpg<-ifelse(speed,'slow','fast')
+mtcars$speedmpg
+
+```
+```{r}
+#install.packages('knitr', dependencies = T)
+#library(knitr)
+```
+
+```{r}
+mtcars[mtcars$mpg>=30 | mtcars$hp <60,]
+```
+
