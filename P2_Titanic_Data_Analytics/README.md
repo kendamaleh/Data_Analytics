@@ -1,4 +1,4 @@
-Analysis of Titanic passenger data -Project two data analysis project for the Udacity Intro to Programming Nanodegree
+Analysis of Titanic passenger data -Project two data analysis project for the Udacity Intro to Data Analytic Nanodegree
 
 Purpose
 
